@@ -27,21 +27,12 @@ void main() {
   //Concatenação pode ser feita entre string e variável com $ antes da variavel
   //Existem diversos tipos de tratar essa string, como ToUpperCase ou ToLowerCase
 
-  String string1 = "Dart";
-  String string2 = 'Dart';
-  String string3 = '''Linguagem Dart''';
-  String string4 = """Linguagem Dart""";
-  String string5 = "It's Great";
-  String string6 = "Estou estudando " + "a Línguagem Dart";
+  //bool é o tipo de variável boolerana, pode ser true ou false
 
-  String linguagem = "Dart";
-  String mensagem = "Estou estudando a Línguagem ${linguagem.toUpperCase()}";
+  bool ativo = true;
+  String nome = "Dehbora";
 
-  print(string1);
-  print(string2);
-  print(string3);
-  print(string4);
-  print(string5);
-  print(string6);
-  print(mensagem);
+  if (nome.contains("h")) {
+    print("Parabéns! Seu nome contém h.");
+  }
 }
