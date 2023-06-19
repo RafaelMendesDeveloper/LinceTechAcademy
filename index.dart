@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 void main() {
   // var nomeCompleto = "Rafael Mendes Pinto"; utiliza-se var para declarar uma variável
   // Object apelido ="Polêmico"; Object é por cima então utiliza-se para todo o tipo de variável.
@@ -11,9 +13,18 @@ void main() {
   //Serve para deixar claro que a variável sera utilizada, ou serve também para economizar espaço e performance quando combinada com funções...
   //ex: late double ValorTroco;
 
-  late double valorTotal;
+  //Quando você não quiser mudar o valor da variável de jeito nenhum, utilizar Const ou Final;
+  //ex: Const var NomeDoFundador = Karl Marx;
+  //final não se preocupa com valor. apenas com a reatribuição
+  //const se preocupa com os dois
 
-  valorTotal = 1000;
+  //int números inteiros, double números decimais
+  //nas diversas variáveis exisem diversos tipos de comandinhos específicos para arredondar, transformar, etc...
+  //quando pode ser implementado qualquer uma das duas, utiliza-se NUM
 
-  print(valorTotal);
+  int idade1 = 12;
+  double idade2 = 12;
+
+  print(idade1);
+  print(idade2);
 }
