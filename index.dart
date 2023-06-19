@@ -7,5 +7,13 @@ void main() {
   // PARA TRANSFORMAR A VARIÁVEL EM NULA É OBRIGATÓRIO COLOCAR O ? logo após o uso.
   //String? NomeEsposa = null;
 
-  
+  // utilizar o comando late antes das variáveis, implica que essa variável será declarada depois (quando não declarada e utilizada da erro.)
+  //Serve para deixar claro que a variável sera utilizada, ou serve também para economizar espaço e performance quando combinada com funções...
+  //ex: late double ValorTroco;
+
+  late double valorTotal;
+
+  valorTotal = 1000;
+
+  print(valorTotal);
 }
