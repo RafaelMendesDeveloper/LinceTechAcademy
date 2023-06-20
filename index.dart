@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 void main() {
   // var nomeCompleto = "Rafael Mendes Pinto"; utiliza-se var para declarar uma variável
   // Object apelido ="Polêmico"; Object é por cima então utiliza-se para todo o tipo de variável.
@@ -29,10 +27,27 @@ void main() {
 
   //bool é o tipo de variável boolerana, pode ser true ou false
 
-  bool ativo = true;
-  String nome = "Dehbora";
+  //LISTAS(vetores)- > botar a variavel e os colchetes []
+  //ou uso List<tipo> variavel = []
+  //existem diversos tipos de propriedades para serem usadas junto das listas
+  //.lenght ou .isEmpty
+  //spread operator são os ... e sao muito uteís para se unir listas :)
+  //lista nulas, não podem ser adicionadas
+  var idade = 15;
+  var apps1 = ["twitter", "instagram", "reddit"];
+  var apps2 = ["discord", "whatsapp", "telegram"];
+  var appsruins = null;
 
-  if (nome.contains("h")) {
-    print("Parabéns! Seu nome contém h.");
-  }
+  var appstotais = [];
+  // appstotais.addAll(apps1);
+  appstotais = [
+    "facebook",
+    ...apps1,
+    ...apps2,
+    "decola",
+    if (idade < 18) "snapchat", 
+    ...?appsruins
+  ];
+
+  print(appstotais);
 }
