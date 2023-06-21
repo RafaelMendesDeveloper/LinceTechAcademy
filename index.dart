@@ -33,21 +33,14 @@ void main() {
   //.lenght ou .isEmpty
   //spread operator são os ... e sao muito uteís para se unir listas :)
   //lista nulas, não podem ser adicionadas
-  var idade = 15;
-  var apps1 = ["twitter", "instagram", "reddit"];
-  var apps2 = ["discord", "whatsapp", "telegram"];
-  var appsruins = null;
-
-  var appstotais = [];
   // appstotais.addAll(apps1);
-  appstotais = [
-    "facebook",
-    ...apps1,
-    ...apps2,
-    "decola",
-    if (idade < 18) "snapchat", 
-    ...?appsruins
-  ];
 
-  print(appstotais);
+  //CONJUNTOS - NÃO PODEM CONTER ELEMENTOS REPETIDOS!!!!
+  // UTILIZA-SE CHAVES
+  // nomes = {}
+  // ou Set<String> nomes = {};
+  // para começar com ela vazia voce precisa -> var nomes = <tipovar>{};
+  var nomes = {5, 5, 5};
+ 
+  print(nomes);
 }
