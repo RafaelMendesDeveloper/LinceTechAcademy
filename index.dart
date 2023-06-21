@@ -40,7 +40,47 @@ void main() {
   // nomes = {}
   // ou Set<String> nomes = {};
   // para começar com ela vazia voce precisa -> var nomes = <tipovar>{};
-  var nomes = {5, 5, 5};
- 
-  print(nomes);
+
+  //MAPAS - ={};
+  //.values para descobrir os valores
+  //.keys para descobrir as chaves desses valores
+  //colocando o ForEach cria um laço de repetição que passará um por um.
+  //quando quero mostrar os dois apenas boto NomeMap.forEach((varChave, VarValor){comando});
+  //   for (var entry in comentarios.entries) {
+  //   print(entry.key);
+  //   print(entry.value);
+  // }
+  //spread operator funciona!!!
+  //map é muito útil, serve pra BASTAAAANTE COISA!
+
+  Map<String, List<String>> livros = Map<String, List<String>>();
+
+  livros['Harry Potter'] = [
+    'Pedra Filosofal',
+    'Câmara Secreta',
+    'Prisioneiros de Azkhabam',
+    'Cálice de Fogo',
+    'Ordem da Fênix',
+    'Enigma do Príncipe',
+    'Reliquias da Morte'
+  ];
+  livros['Jogos Vorazes'] = ['A Sorte', 'Em Chamas', 'Esperança'];
+  livros['Os Vingadores'] = [
+    'The Avengers',
+    'A Era de Ultron',
+    'Guerra Infinita',
+    'Ultimato'
+  ];
+
+  livros.forEach((key, value) {
+    print("""
+      $key
+      ${value}
+""");
+  });
+
+  Map<String, List<String>>? teste = null;
+
+  var novosLivros = {...livros, ...?teste};
+  print(novosLivros);
 }
