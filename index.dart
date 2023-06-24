@@ -110,32 +110,56 @@ void main() {
   //   return v1 + v2 / v1;
   // };
 
-  num getSoma(num v1, num v2) {
-    return v1 + v2 / v1;
-  }
+  // num getSoma(num v1, num v2) {
+  //   return v1 + v2 / v1;
+  // }
   //uma forma mais simplificada da outra função acima
 
   // minhaFuncao();
-  print(getSoma(2, 3));
+  // print(getSoma(2, 3));
 
   //podemos declarar uma função dentro ou fora da outra tranquilamente
   //por isso não necessáriamente eu preciso deixar minhas funções dentro
   //do int main
 
   //PRA SIMPLIFICAR AINDA MAIS A FUNÇÃO ACIMA PODERIAMOS FAZER DESSA MANEIRA
-  num getSoma2(num v1, num v2) => v1 + v2;
-  print(getSoma2(2, 4));
-  print(getSoma2(5, 6));
+  // num getSoma2(num v1, num v2) => v1 + v2;
+  // print(getSoma2(2, 4));
+  // print(getSoma2(5, 6));
 
-  num NumFunction(num a, num b) {
-    return a + b;
-  }
-  ;
+  // num NumFunction(num a, num b) {
+  //   return a + b;
+  // }
+  // ;
 
-  num coisa = 8;
-  num ruim = 9;
+  // num coisa = 8;
+  // num ruim = 9;
 
-  print(NumFunction(coisa, ruim));
-
+  // print(NumFunction(coisa, ruim));
   //para funções curtas o => funciona como o return
+
+  //FUNÇÕES COM PARAMÊTROS
+  //Quando o parÂmetro é OPCIONAL. colocamos colchetes nele. E botar para receber valores nulos ?
+  // criarLogin(String email, [String? senha]) {
+  //   if (senha == null) senha = '123456';
+  //   print('=> : $email $senha');
+  // }
+  
+  // criarLogin('bruce@dc.com.br', 'Batman');
+  // criarLogin('bruce@dc.com.br');
+
+  //Para NOMEAR os parâmetros, utilizamos chaves
+  //E se o valor do parâmetro pode ser nulo usamos null safety
+  //SE o valor do parâmetro NÃO pode ser nulo utilizamos REQUIRED antes da variável
+  //podemos mistrurar parâmetros nomeados com parâmetros nulos etc...
+
+//   void adicionarUsuario(String? cidade, {required String nome,required String email,int idade = 18,required String cep}) {
+//   print('Adicionar Usuario: $cidade $nome $email $idade $cep');
+// }
+
+//   adicionarUsuario( 'Gotham' ,
+//       nome: 'Rafael Mendes',
+//       email: 'rafael.mendes@gmail.com',
+//       idade: 18,
+//       cep: '09876-098');
 }
