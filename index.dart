@@ -167,10 +167,17 @@ void main() {
 //Quando criamos uma função e nao deixamos claro o que ela retorna, o compilador vai retornar algo nulo.
 //se a função tiver void, e não possuir nada DA ERRO
 //ELA SEMPRE DARÁ ALGUM TIPO DE RETORNO
+//   String? calcular() {
+//   return '';
+// }
+//   print(calcular());
 
-  print(calcular());
-}
+//FUNÇÕES COMO OBJETO E PARÂMETRO
+//Podemos utilizar funções como parâmetros tranquilamente
+void printElement(int element) => print(element);
+var calcularElement = (int element) => print(element * 2);
 
-String? calcular() {
-  return '';
+  var list = [18, 39, 24];
+  list.forEach(calcularElement);
+  list.forEach(printElement);
 }
