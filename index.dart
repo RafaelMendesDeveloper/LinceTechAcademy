@@ -144,7 +144,7 @@ void main() {
   //   if (senha == null) senha = '123456';
   //   print('=> : $email $senha');
   // }
-  
+
   // criarLogin('bruce@dc.com.br', 'Batman');
   // criarLogin('bruce@dc.com.br');
 
@@ -162,4 +162,15 @@ void main() {
 //       email: 'rafael.mendes@gmail.com',
 //       idade: 18,
 //       cep: '09876-098');
+
+//FUNÇOES COM RETORNO
+//Quando criamos uma função e nao deixamos claro o que ela retorna, o compilador vai retornar algo nulo.
+//se a função tiver void, e não possuir nada DA ERRO
+//ELA SEMPRE DARÁ ALGUM TIPO DE RETORNO
+
+  print(calcular());
+}
+
+String? calcular() {
+  return '';
 }
