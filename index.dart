@@ -202,11 +202,19 @@ void main() {
 // is! -> se a variavel não é algum tipo especifico
 // as -> casting serve para identificar o tipo específico da variável
 // para usar o as você precisa ser um subtitulo de uma classe
-  dynamic time = brasileirao();
-  time = (time as brasileirao).maior;
-  print(time);
-}
+//   dynamic time = brasileirao();
+//   time = (time as brasileirao).maior;
+//   print(time);
+// }
+// class brasileirao {
+//   final maior = 'Santos';
 
-class brasileirao {
-  final maior = 'Santos';
+//OPERADORES DE ATRIBUIÇÃO
+// =  atribuo o item a variável
+// +=  mais igual, soma um número com a variavel existente -> var+=10; soma 10 para a var
+// -=  menos igual, subtrai um número com a variavel existente -> var-=10; tira 10 para a var
+// *=  vezes igual, multiplica um número com a variavel existente -> var*=10; multiplia 10 para a var
+// /=  divisão igual, divide um número com a variavel existente -> var/=10; divide 10 para a var
+// %= resto igual, coloca o resto na variavel existene -> var%=10; bota o resto de 10 na var
+// ??= atribuir um valor para a variável caso ela seja nula -> var ??= 10, caso a var seja nula ele vira 10;
 }
