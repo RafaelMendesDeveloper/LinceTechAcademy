@@ -174,10 +174,21 @@ void main() {
 
 //FUNÇÕES COMO OBJETO E PARÂMETRO
 //Podemos utilizar funções como parâmetros tranquilamente
-void printElement(int element) => print(element);
-var calcularElement = (int element) => print(element * 2);
+// void printElement(int element) => print(element);
+// var calcularElement = (int element) => print(element * 2);
 
-  var list = [18, 39, 24];
-  list.forEach(calcularElement);
-  list.forEach(printElement);
+//   var list = [18, 39, 24];
+//   list.forEach(calcularElement);
+//   list.forEach(printElement);
+
+// OPERADORES ARITMÉTICOS
+// soma +
+// subtração -
+// multiplicação *
+// divisão /
+// resto %
+// divisão deixando o resto ~/
+// incrementar mais um ++ / tirar menos um --
+
+
 }
