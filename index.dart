@@ -226,13 +226,39 @@ void main() {
 //EXPRESSÕES CONDICIONAIS
 // condition ? expr1 : expr2  se for verdedeiro expresão 1, se for falso expressão 2
 // expr1 ?? expr2  se a variavel for nula assume o valor após o sinal
+  // bool conteudo = false;
+  // final resultado = conteudo ? 'publico' : 'privado';
+  // print(resultado);
+  // String? getEscola() => null;
+  // String? escola = getEscola();
+  // final resultado2 = escola ?? 'Objetivo';
+  // print(resultado2);
 
-  bool conteudo = false;
-  final resultado = conteudo ? 'publico' : 'privado';
-  print(resultado);
+//NOTAÇÃO EM CASCATA
+//operador ..
+// serve para você acessar um item dentro de uma classe
+  final container = Container();
+  container.cor = 'Azul';
+  container.altura = 3.15;
+  container.largura = 5.45;
 
-  String? getEscola() => null;
-  String? escola = getEscola();
-  final resultado2 = escola ?? 'Objetivo';
-  print(resultado2);
+  final container2 = Container()
+    ..cor = 'Preto'
+    ..altura = 2.0
+    ..largura = 90;
+
+  final container3 = getContainer()
+    ?..cor = 'Vermelho'
+    ..altura = 2.3
+    ..largura = 50;
+}
+
+class Container {
+  late String cor;
+  late double altura;
+  late double largura;
+}
+
+Container? getContainer() {
+  return Container();
 }
