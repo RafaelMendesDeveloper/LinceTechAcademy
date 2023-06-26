@@ -195,4 +195,18 @@ void main() {
 // menor <  /maior >  /menor ou igual <=  /maior ou igual >=
 // atribuição =
 // igualdade de tudo ===
+
+//OPERADORES DE TESTE E DE TIPO
+// utlizado principalmente para fazer validações
+// is -> se a variavel é algum tipo especifico
+// is! -> se a variavel não é algum tipo especifico
+// as -> casting serve para identificar o tipo específico da variável
+// para usar o as você precisa ser um subtitulo de uma classe
+  dynamic time = brasileirao();
+  time = (time as brasileirao).maior;
+  print(time);
+}
+
+class brasileirao {
+  final maior = 'Santos';
 }
