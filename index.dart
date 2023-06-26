@@ -217,4 +217,22 @@ void main() {
 // /=  divisão igual, divide um número com a variavel existente -> var/=10; divide 10 para a var
 // %= resto igual, coloca o resto na variavel existene -> var%=10; bota o resto de 10 na var
 // ??= atribuir um valor para a variável caso ela seja nula -> var ??= 10, caso a var seja nula ele vira 10;
+
+//OPERADORES LÓGICOS
+// !exp falso
+// || ou
+// && e
+
+//EXPRESSÕES CONDICIONAIS
+// condition ? expr1 : expr2  se for verdedeiro expresão 1, se for falso expressão 2
+// expr1 ?? expr2  se a variavel for nula assume o valor após o sinal
+
+  bool conteudo = false;
+  final resultado = conteudo ? 'publico' : 'privado';
+  print(resultado);
+
+  String? getEscola() => null;
+  String? escola = getEscola();
+  final resultado2 = escola ?? 'Objetivo';
+  print(resultado2);
 }
