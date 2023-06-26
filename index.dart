@@ -264,5 +264,18 @@ void main() {
 //LOGICAS COM FOR
 //for normal... for(var cont=0; cont<5; cont++){}
 //for(variavel in lista){} repete os items da lista
-//forEach utiliza cada elemento da lista 
+//forEach utiliza cada elemento da lista
+
+//WHILE E DO WHILE
+//while e do while normais...
+
+//CONTINUE E BREAK
+//break -> serve para acabar o laço de repetição
+//continue -> serve para pular um laço de repetição uma vez
+// sempre mistura com if e else
+//.where((var) => var.requisito == logica)
+
+//SWITCH CASE
+//switch case normal...
+//para utilizar mais de uma função utilizar uma label :)
 }
