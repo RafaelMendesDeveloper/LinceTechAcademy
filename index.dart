@@ -190,5 +190,9 @@ void main() {
 // divisão deixando o resto ~/
 // incrementar mais um ++ / tirar menos um --
 
-
+//OPERADORES RELACIONAIS E DE IGUALDADE
+// igualdade == // desigualdade !=
+// menor <  /maior >  /menor ou igual <=  /maior ou igual >=
+// atribuição =
+// igualdade de tudo ===
 }
