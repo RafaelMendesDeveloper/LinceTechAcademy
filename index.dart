@@ -237,28 +237,32 @@ void main() {
 //NOTAÇÃO EM CASCATA
 //operador ..
 // serve para você acessar um item dentro de uma classe
-  final container = Container();
-  container.cor = 'Azul';
-  container.altura = 3.15;
-  container.largura = 5.45;
+// class Container {
+//   late String cor;
+//   late double altura;
+//   late double largura;
+// }
+// Container? getContainer() {
+//   return Container();
+// }
+//   final container = Container();
+//   container.cor = 'Azul';
+//   container.altura = 3.15;
+//   container.largura = 5.45;
+//   final container2 = Container()
+//     ..cor = 'Preto'
+//     ..altura = 2.0
+//     ..largura = 90;
+//   final container3 = getContainer()
+//     ?..cor = 'Vermelho'
+//     ..altura = 2.3
+//     ..largura = 50;
 
-  final container2 = Container()
-    ..cor = 'Preto'
-    ..altura = 2.0
-    ..largura = 90;
+// LOGICAS COM IF E ELSE
+// if e else normal...
 
-  final container3 = getContainer()
-    ?..cor = 'Vermelho'
-    ..altura = 2.3
-    ..largura = 50;
-}
-
-class Container {
-  late String cor;
-  late double altura;
-  late double largura;
-}
-
-Container? getContainer() {
-  return Container();
+//LOGICAS COM FOR
+//for normal... for(var cont=0; cont<5; cont++){}
+//for(variavel in lista){} repete os items da lista
+//forEach utiliza cada elemento da lista 
 }
