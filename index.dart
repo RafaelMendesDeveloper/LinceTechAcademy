@@ -278,4 +278,15 @@ void main() {
 //SWITCH CASE
 //switch case normal...
 //para utilizar mais de uma função utilizar uma label :)
+
+//ASSERT
+//quando estamos desenvolvendo utilizamos o assert
+//é uma função reservada para ativarmos
+// se for verdadeiro a execução do programa continua
+//se for falsa adiciona uma mensagem de erro
+
+  void main() {
+    final url = 'https://dart.com';
+    assert(url.contains('https','deve ter o https'));
+  }
 }
