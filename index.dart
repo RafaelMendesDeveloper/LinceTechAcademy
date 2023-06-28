@@ -284,9 +284,14 @@ void main() {
 //é uma função reservada para ativarmos
 // se for verdadeiro a execução do programa continua
 //se for falsa adiciona uma mensagem de erro
+//serve para validar correto, mas precisa do framework
 
-  void main() {
-    final url = 'https://dart.com';
-    assert(url.contains('https','deve ter o https'));
-  }
+//EXCESSÕES E ERROS
+//erro -> erro no dart = fluxo de programa inesperado > NÃO DEVE SER TRATADO
+//deve ser corrigido!! programador deveria ter evitado o erro
+//ex: AssertionError -> quando uma instrução assert falha
+
+//exceções -> fluxo de programa esperado, espero que aconteça
+//se acontecer TRATADO
+//
 }
