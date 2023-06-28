@@ -293,5 +293,40 @@ void main() {
 
 //exceções -> fluxo de programa esperado, espero que aconteça
 //se acontecer TRATADO
-//
+
+//throw -> lançar objetos ou exceções;
+//criar uma classe, implementar e botar no throw
+
+  final valor = 1000;
+
+  contaBancaria(valor);
+}
+
+void contaBancaria(int valor) {
+  final saldo = 100;
+  if (valor > saldo) {
+    throw SaldoInsuficienteException(valor);
+  }
+  if (valor < 0) {
+    throw ValorNegativoException(valor);
+  }
+  print('valor retirado: $valor');
+}
+
+class SaldoInsuficienteException implements Exception {
+  final valor;
+  SaldoInsuficienteException(this.valor);
+  @override
+  String toString() {
+    return 'SaldoInsuficienteException $valor';
+  }
+}
+
+class ValorNegativoException implements Exception {
+  final valor;
+  ValorNegativoException(this.valor);
+  @override
+  String toString() {
+    return 'ValorNegativoException $valor';
+  }
 }
