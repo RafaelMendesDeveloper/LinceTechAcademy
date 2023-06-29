@@ -296,37 +296,111 @@ void main() {
 
 //throw -> lançar objetos ou exceções;
 //criar uma classe, implementar e botar no throw
+// void contaBancaria(int valor) {
+//   final saldo = 100;
+//   if (valor > saldo) {
+//     throw SaldoInsuficienteException(valor);
+//   }
+//   if (valor < 0) {
+//     throw ValorNegativoException(valor);
+//   }
+//   print('valor retirado: $valor');
+// }
+// class SaldoInsuficienteException implements Exception {
+//   final valor;
+//   SaldoInsuficienteException(this.valor);
+//   @override
+//   String toString() {
+//     return 'SaldoInsuficienteException $valor';
+//   }
+// }
+// class ValorNegativoException implements Exception {
+//   final valor;
+//   ValorNegativoException(this.valor);
+//   @override
+//   String toString() {
+//     return 'ValorNegativoException $valor';
+//   }
+// }
+//   final valor = 1000;
+//   contaBancaria(valor);
 
-  final valor = 1000;
+//TRATAMENTO DE ERROS
+// try-catch -> tente o código (se não for possível capture o objeto)
+// e: Object (objeto do erro)
+// Stack trace : s (a pilha do que deu errado)
+// on (especificar o que apenas pegar, exemplos exception ou erros)
+// finally (ultimo block, sempre será executado)
+// rethrow (relança)
+// try{
+//   try {
+//     gerrarErro(1);
+//   } on valor1Exception {
+//     rethrow;
+//   } on valor2Exception {
+//     print('valor 2');
+//   } on valor3Exception {
+//     print('valor 3');
+//   } on Exception catch (e, s) {
+//     print('Não foi possível: $e');
+//   } catch (e) {
+//     print('Ouve um erro');
+//   } finally {
+//     print('finalizado');
+//   }
+// } on valor1Exception {
+//   print('valor 1 cap');
+// }
+// }
+// void gerrarErro(int numero) {
+//   if (numero == 1) {
+//     throw valor1Exception();
+//   }
+//   if (numero == 2) {
+//     throw valor2Exception();
+//   }
+//   if (numero == 3) {
+//     throw valor3Exception();
+//   }
+//   if (numero == 4) {
+//     dynamic valor = true;
+//     valor++;
+//   }
+//   throw Exception();
 
-  contaBancaria(valor);
+// class valor1Exception implements Exception {}
+
+// class valor2Exception implements Exception {}
+
+// class valor3Exception implements Exception {}
+
+//INTRODUÇÃO A PROGRAMAÇÃO ORIENTADA A OBJETOS
+//todas as classes são uma subclasse de Object
+//elas herdaram de object
+// quando criamos uma classe
+// declaramos a variavel -> classe variavel = classe();
+//printamos variavel.algumaSubVariavelDaClasse;
+//métodos são funções dentro de classes
+//classe - tudo que representa um objeto do mundo real
+//cada classe possui métodos e atributos
+//->cor do celular: tamanho do celular:
+//o que fazem o celulár ser do jeito que é
+  Santos jogador = Santos();
+  print(jogador.nome);
+  print(jogador.idade);
+  print(jogador.salario);
+  print(jogador.fezGol);
+
+  jogador.tempoGol();
 }
 
-void contaBancaria(int valor) {
-  final saldo = 100;
-  if (valor > saldo) {
-    throw SaldoInsuficienteException(valor);
-  }
-  if (valor < 0) {
-    throw ValorNegativoException(valor);
-  }
-  print('valor retirado: $valor');
-}
+class Santos {
+  String nome = 'Marcos Leonardo';
+  int idade = 19;
+  double salario = 420210;
+  bool fezGol = true;
 
-class SaldoInsuficienteException implements Exception {
-  final valor;
-  SaldoInsuficienteException(this.valor);
-  @override
-  String toString() {
-    return 'SaldoInsuficienteException $valor';
-  }
-}
-
-class ValorNegativoException implements Exception {
-  final valor;
-  ValorNegativoException(this.valor);
-  @override
-  String toString() {
-    return 'ValorNegativoException $valor';
+  void tempoGol() {
+    print(DateTime.now());
   }
 }
