@@ -444,23 +444,52 @@ void main() {
 
   //juntar variáveis nomeCompleto = '$nome $sobrenome'
   //se eu só tiver o nome Jogadores.nome(String nome):this(nome, 'Lucas')
+
+// class Atacantes extends Jogadores {
+//   Atacantes(String nome) : super(nome);
+// }
+
+// class Defensores extends Jogadores {
+//   Defensores(String nome) : super(nome);
+// class Jogadores {
+//   final String nome;
+//   Jogadores(this.nome);
+
+//   factory Jogadores.criarInstancia(String nome, String tipo) {
+//     if (tipo == 'ATA') return Atacantes(nome);
+//     if (tipo == 'ZAG') return Defensores(nome);
+//     return Jogadores(nome);
+
+//METODOS
+  final produtoTV = Produto(nome: 'TV', preco: 1000.00);
+  final produtoGame = Produto(nome: 'Game', preco: 4000.00);
+  print(produtoTV.nome);
+  print(produtoTV.preco);
+  print(produtoTV.getTaxa());
+  print('--------');
+  print(produtoGame.nome);
+  print(produtoGame.preco);
+  print(produtoGame.getTaxa());
+  print('---TOTAL---');
+  // final taxas = produtoGame.getTaxa() + produtoTV.getTaxa();
+  // final precos = produtoGame.preco + produtoTV.preco;
+  print(produtoGame + produtoTV);
 }
 
-class Jogadores {
+class Produto {
   final String nome;
-  Jogadores(this.nome);
+  final double preco;
 
-  factory Jogadores.criarInstancia(String nome, String tipo) {
-    if (tipo == 'ATA') return Atacantes(nome);
-    if (tipo == 'ZAG') return Defensores(nome);
-    return Jogadores(nome);
+  Produto({
+    required this.nome,
+    required this.preco,
+  });
+
+  double getTaxa() {
+    return this.preco * 0.02;
   }
-}
 
-class Atacantes extends Jogadores {
-  Atacantes(String nome) : super(nome);
-}
-
-class Defensores extends Jogadores {
-  Defensores(String nome) : super(nome);
+  double operator +(Produto produto) {
+    return this.preco + produto.preco + this.getTaxa() + produto.getTaxa();
+  }
 }
