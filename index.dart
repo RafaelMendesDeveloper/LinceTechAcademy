@@ -385,22 +385,28 @@ void main() {
 //cada classe possui métodos e atributos
 //->cor do celular: tamanho do celular:
 //o que fazem o celulár ser do jeito que é
-  Santos jogador = Santos();
-  print(jogador.nome);
-  print(jogador.idade);
-  print(jogador.salario);
-  print(jogador.fezGol);
+// class Santos {
+//   String nome = 'Marcos Leonardo';
+//   int idade = 19;
+//   double salario = 420210;
+//   bool fezGol = true;
 
-  jogador.tempoGol();
+//   void tempoGol() {
+//     print(DateTime.now());
+//   }
+// }
+//   Santos jogador = Santos();
+//   print(jogador.nome);
+//   print(jogador.idade);
+//   print(jogador.salario);
+//   print(jogador.fezGol);
+//   jogador.tempoGol();
+
+//OBTENDO TYPE DO OBJETO
+// quando queremos identificar o tipo de uma classe ou algum objeto específicoo
+  // Type type = Jogadores;
+  Jogadores jogadores = Jogadores();
+  print(jogadores.runtimeType);
 }
 
-class Santos {
-  String nome = 'Marcos Leonardo';
-  int idade = 19;
-  double salario = 420210;
-  bool fezGol = true;
-
-  void tempoGol() {
-    print(DateTime.now());
-  }
-}
+class Jogadores {}
