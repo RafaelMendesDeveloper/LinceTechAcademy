@@ -405,16 +405,28 @@ void main() {
 //OBTENDO TYPE DO OBJETO
 // quando queremos identificar o tipo de uma classe ou algum objeto específicoo
   // Type type = Jogadores;
-  var jogadores = getInstance();
-  print(jogadores.toString());
-  print(jogadores is Jogadores);
+  // Object getInstance() => Jogadores();
+  // var jogadores = getInstance();
+  // print(jogadores.toString());
+  // print(jogadores is Jogadores);
+  // class Jogadores {
+  // @override
+  // String toString() {
+  //   return 'oie ${this.runtimeType}';
+  // }
+
+  //VARIÁVEIS DE INSTÂNCIA
+  //usar o construtor, ou o late, ou o nullSafety
+  //final precisa ser incializado uma vez, por isso não dá
+  var Jogador = Jogadores('Marcos Leonardo', 'Santos');
+  Jogador.time = 'Roma';
+  print(Jogador.nome);
+  print(Jogador.time);
 }
 
 class Jogadores {
-  @override
-  String toString() {
-    return 'oie ${this.runtimeType}';
-  }
-}
+  late final String nome;
+  late String time;
 
-Object getInstance() => Jogadores();
+  Jogadores(this.nome, this.time);
+}
