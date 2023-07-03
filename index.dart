@@ -405,8 +405,16 @@ void main() {
 //OBTENDO TYPE DO OBJETO
 // quando queremos identificar o tipo de uma classe ou algum objeto específicoo
   // Type type = Jogadores;
-  Jogadores jogadores = Jogadores();
-  print(jogadores.runtimeType);
+  var jogadores = getInstance();
+  print(jogadores.toString());
+  print(jogadores is Jogadores);
 }
 
-class Jogadores {}
+class Jogadores {
+  @override
+  String toString() {
+    return 'oie ${this.runtimeType}';
+  }
+}
+
+Object getInstance() => Jogadores();
