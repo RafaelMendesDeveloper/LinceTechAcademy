@@ -461,35 +461,59 @@ void main() {
 //     return Jogadores(nome);
 
 //METODOS
-  final produtoTV = Produto(nome: 'TV', preco: 1000.00);
-  final produtoGame = Produto(nome: 'Game', preco: 4000.00);
-  print(produtoTV.nome);
-  print(produtoTV.preco);
-  print(produtoTV.getTaxa());
-  print('--------');
-  print(produtoGame.nome);
-  print(produtoGame.preco);
-  print(produtoGame.getTaxa());
-  print('---TOTAL---');
-  // final taxas = produtoGame.getTaxa() + produtoTV.getTaxa();
-  // final precos = produtoGame.preco + produtoTV.preco;
-  print(produtoGame + produtoTV);
+// funções dentro de classes
+//OPERADORES
+//para por exemplo juntar duas classes iguais
+//double operator +(Produto produto) {
+//return this.preco + produto.preco + this.getTaxa() + produto.getTaxa();
+
+//Getters e Setters
+// metodos para atribuir, e tratar as variáveis das classes
+//eles existem de fomrma explicita e implicita nos códigos.
+//para utilizar de forma explicita é
+
+//classes abstratas ou interface
+//tipo um contrato para seguir
+//devemos implementar
+
+//Herança
+//Extends e Override
+//
+
+  final atacante = Atacante('Marcos Leonardo', 89);
+  final zagueiro = Zagueiro('Joaquim', 221);
+
+  // print(atacante is Jogador);
+  // print(zagueiro is Jogador);
+
+  print(atacante.nome);
+  print(atacante.transferencia('Lazio'));
+  print(zagueiro.nome);
+  print(zagueiro.transferencia('Fiorentina'));
 }
 
-class Produto {
+class Jogador {
   final String nome;
-  final double preco;
 
-  Produto({
-    required this.nome,
-    required this.preco,
-  });
+  Jogador(this.nome);
 
-  double getTaxa() {
-    return this.preco * 0.02;
+  String transferencia(String clube) {
+    return 'Rumor de Transferência.. ${nome} -> ${clube}';
   }
+}
 
-  double operator +(Produto produto) {
-    return this.preco + produto.preco + this.getTaxa() + produto.getTaxa();
+class Atacante extends Jogador {
+  final int Gols;
+  Atacante(String nome, this.Gols) : super(nome);
+
+  @override
+  String transferencia(String clube) {
+    final valor = super.transferencia('Barcelona') + ' Futebol Clube';
+    return valor;
   }
+}
+
+class Zagueiro extends Jogador {
+  final int Desarmes;
+  Zagueiro(String nome, this.Desarmes) : super(nome);
 }
