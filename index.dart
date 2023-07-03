@@ -478,42 +478,49 @@ void main() {
 
 //Herança
 //Extends e Override
-//
+//  final atacante = Atacante('Marcos Leonardo', 89);
+//   final zagueiro = Zagueiro('Joaquim', 221);
+//   // print(atacante is Jogador);
+//   // print(zagueiro is Jogador);
+//   print(atacante.nome);
+//   print(atacante.transferencia('Lazio'));
+//   print(zagueiro.nome);
+//   print(zagueiro.transferencia('Fiorentina'));}
+// class Jogador {
+//   final String nome;
+//   Jogador(this.nome);
+//   String transferencia(String clube) {
+//     return 'Rumor de Transferência.. ${nome} -> ${clube}';}}
+// class Atacante extends Jogador {
+//   final int Gols;
+//   Atacante(String nome, this.Gols) : super(nome);
+//   @override
+//   String transferencia(String clube) {
+//     final valor = super.transferencia('Barcelona') + ' Futebol Clube';
+//     return valor;}}
+// class Zagueiro extends Jogador {
+//   final int Desarmes;
+//   Zagueiro(String nome, this.Desarmes) : super(nome);}
 
-  final atacante = Atacante('Marcos Leonardo', 89);
-  final zagueiro = Zagueiro('Joaquim', 221);
+//contratos de comportamento e interfaces implicitas
+//implements nao olha pra classe, e sim pra interface; herdando o seu tipo
+//interface herda o tipo
 
-  // print(atacante is Jogador);
-  // print(zagueiro is Jogador);
+//tipos enumerados
+//quando queremos criar constantes e elas são reverificadas...
+// e´ parecido com as listas
 
-  print(atacante.nome);
-  print(atacante.transferencia('Lazio'));
-  print(zagueiro.nome);
-  print(zagueiro.transferencia('Fiorentina'));
-}
+  final corFavorita = Color.red;
 
-class Jogador {
-  final String nome;
-
-  Jogador(this.nome);
-
-  String transferencia(String clube) {
-    return 'Rumor de Transferência.. ${nome} -> ${clube}';
+  if (corFavorita == Color.red) {
+    print('Sua cor favorita é ${corFavorita.name}');
   }
 }
 
-class Atacante extends Jogador {
-  final int Gols;
-  Atacante(String nome, this.Gols) : super(nome);
-
-  @override
-  String transferencia(String clube) {
-    final valor = super.transferencia('Barcelona') + ' Futebol Clube';
-    return valor;
-  }
+enum Color {
+  red,
+  blue,
+  white,
 }
 
-class Zagueiro extends Jogador {
-  final int Desarmes;
-  Zagueiro(String nome, this.Desarmes) : super(nome);
-}
+const defaultColor = Color.red;
