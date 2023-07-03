@@ -415,18 +415,52 @@ void main() {
   //   return 'oie ${this.runtimeType}';
   // }
 
-  //VARIÁVEIS DE INSTÂNCIA
-  //usar o construtor, ou o late, ou o nullSafety
-  //final precisa ser incializado uma vez, por isso não dá
-  var Jogador = Jogadores('Marcos Leonardo', 'Santos');
-  Jogador.time = 'Roma';
-  print(Jogador.nome);
-  print(Jogador.time);
+//VARIÁVEIS DE INSTÂNCIA
+//usar o construtor, ou o late, ou o nullSafety
+//final precisa ser incializado uma vez, por isso não dá
+  // class Jogadores {
+  //   late final String nome;
+  //   late String time;
+  //   Jogadores(this.nome, this.time);
+  // }
+  // var Jogador = Jogadores('Marcos Leonardo', 'Santos');
+  // Jogador.time = 'Roma';
+  // print(Jogador.nome);
+  // print(Jogador.time);
+
+//CONSTRUTORES E FACTORIES
+//this.var
+//podemos ter varios construtores, portanto que sejam de nomes diferentes
+// se eu quiser utilizar um map, eu preciso criar uma superClasse(outra classe), criar um construtor, e utilizar o .fromJson
+  //  final jogador = Jogadores({'nome': 'Jõao Paulo'});
+  //class JogadoresModel {
+  //late String nome;
+  //JogadoresModel.fromJson(Map data) {
+  //this.nome = data['nome']; }
+  //Jogadores(Map data) : super.fromJson(data);
+
+  //Se eu quiser testar, ver se contém algo antes, eu uso : assert
+  // Jogadores.nome(this.nome) : assert(nome.contains('a'));
+
+  //juntar variáveis nomeCompleto = '$nome $sobrenome'
+  //se eu só tiver o nome Jogadores.nome(String nome):this(nome, 'Lucas')
 }
 
 class Jogadores {
-  late final String nome;
-  late String time;
+  final String nome;
+  Jogadores(this.nome);
 
-  Jogadores(this.nome, this.time);
+  factory Jogadores.criarInstancia(String nome, String tipo) {
+    if (tipo == 'ATA') return Atacantes(nome);
+    if (tipo == 'ZAG') return Defensores(nome);
+    return Jogadores(nome);
+  }
+}
+
+class Atacantes extends Jogadores {
+  Atacantes(String nome) : super(nome);
+}
+
+class Defensores extends Jogadores {
+  Defensores(String nome) : super(nome);
 }
