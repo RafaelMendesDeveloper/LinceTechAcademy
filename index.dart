@@ -1,4 +1,6 @@
-void main() {
+import 'dart:io';
+
+void main() async {
   // var nomeCompleto = "Rafael Mendes Pinto"; utiliza-se var para declarar uma variável
   // Object apelido ="Polêmico"; Object é por cima então utiliza-se para todo o tipo de variável.
   // String nomeCivil = "Rafael"; String é quando quero declarar de maneira específica que será uma string.
@@ -510,17 +512,51 @@ void main() {
 //quando queremos criar constantes e elas são reverificadas...
 // e´ parecido com as listas
 
-  final corFavorita = Color.red;
+  // final corFavorita = Color.red;
 
-  if (corFavorita == Color.red) {
-    print('Sua cor favorita é ${corFavorita.name}');
+  // if (corFavorita == Color.red) {
+  //   print('Sua cor favorita é ${corFavorita.name}');
+  // }
+
+  // CONCORRÊNCIA
+  //future é um container que engloba valores incompletos ou valor completos com ou sem erro
+  //acessamos os valores atravez de um callback(then -> quando terminar ele faz algo)
+
+  // final future = Future.value(5);
+  // future.then((value) => print(value));
+
+  //ou colocar o async no começo
+  //.catchError (quando tiver erro, acontecerá algo)
+  //.whenComplete (quando a tarefa tiver completa, fará algo)
+
+  // final future = Future.value(5);
+  // future.then((value) => value + value).then((value) async {
+  //   final result = await Future.value(2);
+  //   return value * result;
+  // }).then((value) => print(value));
+
+  try { 
+    final future = Future.value(5); //pega o resultado 5
+    final result = await future; // passa o valor do future pro resultado
+    final result2 = result + result; //soma o valor do resultado e armazena em outra variavel
+
+    final future2 = await Future.value(2); //pega o resultado 2
+    print(result2 * future2); //printa a multiplicação do resultado 2 com a soma realizada anteriormente
+  } catch (e) { //pega a exceção se tiver
+    print(e); //printa qual  é a exceção
+  } finally { //quando for finalizado
+    print('completando...'); //printa finalizado
   }
+
+  //para pegar uma API simples, utilizar File('nome do arquivo.arquivo')
+  //ai usar a variavel.readAsString() eai mesclar com os conhecimentos de future
+
 }
 
-enum Color {
-  red,
-  blue,
-  white,
-}
+// enum Color {
+//   red,
+//   blue,
+//   white,
+// }
 
-const defaultColor = Color.red;
+// const defaultColor = Color.red;
