@@ -4,58 +4,40 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  @override
-  // ignore: library_private_types_in_public_api
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home:  Scaffold(
         appBar: AppBar(
-          title: const Text('Aplicativo Exemplo'),
+          title: const Text('Stack Exemplo'),
         ),
-        body: const Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //MainAxisAlignment.
-          //center -> vai tudo pro meio
-          //end -> vai tudo pra esquerda, ou baixo
-          //spaceAround -> ele espaça e deixa simétrico na tela
-          //spaceBetween -> ele espaça entre os elementos e deixa eles colados na margem da tela
-          //spaceEvenly -> ele espaça igual margem da tela e elementos
+        body: Stack(
+          alignment: AlignmentDirectional.topEnd,
           children: [
-            Center(
-              child: Text(
-                'Coluna 1',
-                style: TextStyle(
-                  fontSize: 25,
-                ),
+            Container(
+              width: 300,
+              height: 300,
+              color: Colors.blue,
+            ),
+            Positioned(
+              top: 100,
+              right: -100,
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
               ),
             ),
-            Center(
-              child: Text(
-                'Coluna 2',
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                'Coluna 3',
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-              ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.yellow,
             ),
           ],
-        ),
+          ),
       ),
     );
   }
