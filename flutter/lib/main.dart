@@ -4,27 +4,37 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  List<String> listaProdutos = [];
 
   @override
   Widget build(BuildContext context) {
+    for (var i = 1; i <= 100; i++) {
+      listaProdutos.add('Produto $i');
+    }
     return Container(
-      child: const Center(
-        child: Text(
-          'Texto\nTexto2',
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-              fontSize: 50,
-              height: 2,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              color: Colors.pink,
-              backgroundColor: Colors.white,
-              decoration: TextDecoration.overline
-              ),
+      child: MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('List View'),
+          ),
+          body: ListView.builder(
+            itemCount: listaProdutos.length,
+            itemBuilder: (context, indice) {
+              return ListTile(
+                title: Text('Escolhido: ${listaProdutos[indice]}'),
+              );
+            },
+          ),
         ),
-      ), //OBRIGATORIO o text direction
+      ),
     );
   }
 }
