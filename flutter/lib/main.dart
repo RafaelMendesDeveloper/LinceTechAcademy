@@ -4,28 +4,27 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-  @override
-  State<MyApp> createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Imagens'),
-          ),
-          body: Image.asset(
-            'assets/images/angelo.png', 
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-            ),
-            ),
+    return Container(
+      child: const Center(
+        child: Text(
+          'Texto\nTexto2',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+              fontSize: 50,
+              height: 2,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              color: Colors.pink,
+              backgroundColor: Colors.white,
+              decoration: TextDecoration.overline
+              ),
+        ),
+      ), //OBRIGATORIO o text direction
     );
   }
 }
