@@ -4,41 +4,28 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => MyAppState();
+}
+
+class MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:  Scaffold(
-        appBar: AppBar(
-          title: const Text('Stack Exemplo'),
-        ),
-        body: Stack(
-          alignment: AlignmentDirectional.topEnd,
-          children: [
-            Container(
-              width: 300,
-              height: 300,
-              color: Colors.blue,
-            ),
-            Positioned(
-              top: 100,
-              right: -100,
-              child: Container(
-                width: 200,
-                height: 200,
-                color: Colors.red,
-              ),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-            ),
-          ],
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Imagens'),
           ),
-      ),
+          body: Image.asset(
+            'assets/images/angelo.png', 
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+            ),
+            ),
     );
   }
 }
